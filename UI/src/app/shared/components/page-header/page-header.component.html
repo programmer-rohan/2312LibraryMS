@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <span>Library Management Sytem</span>
+    <span class="spacer"></span>
+    <div class="user-info">
+        @if (loggedIn) {
+        <div class="name">Hi, {{name}}</div>
+        }
+        <button mat-raised-button color="accent" routerLink="/profile">Profile</button>
+        <button mat-raised-button color="warn" (click)="logout()">Log
+            Out</button>
+    </div>
+</mat-toolbar>

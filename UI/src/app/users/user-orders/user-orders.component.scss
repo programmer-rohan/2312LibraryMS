@@ -1,0 +1,20 @@
+mat-card {
+  width: max-content;
+  margin-bottom: 1rem;
+}
+.returned {
+  mat-card {
+    margin-top: 2rem;
+  }
+}
+
+table {
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    font-size: 1.1rem;
+  }
+
+  .mat-mdc-header-cell {
+    font-style: italic;
+  }
+}

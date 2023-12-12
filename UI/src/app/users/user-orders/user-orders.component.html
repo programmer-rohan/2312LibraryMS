@@ -1,0 +1,45 @@
+<section class="pending">
+    <mat-card>
+        <mat-card-content>
+            <h2>Pending Returns ({{ pendingReturns.length }})</h2>
+        </mat-card-content>
+    </mat-card>
+
+    @if (pendingReturns.length > 0) {
+    <page-table [columns]="columnsForPendingReturns"
+                [dataSource]="pendingReturns">
+    </page-table>
+    }
+    @else {
+    <mat-card>
+        <mat-card-content>
+            <h2>No Orders Done Yet!</h2>
+        </mat-card-content>
+    </mat-card>
+    }
+
+
+</section>
+
+<section class="returned">
+    <mat-card>
+        <mat-card-content>
+            <h2>Returned Orders ({{ completedReturns.length }})</h2>
+        </mat-card-content>
+    </mat-card>
+
+    @if (completedReturns.length > 0) {
+    <page-table [columns]="columnsForCompletedReturns"
+                [dataSource]="completedReturns">
+    </page-table>
+    }
+    @else {
+    <mat-card>
+        <mat-card-content>
+            <h2>No Orders Done Yet!</h2>
+        </mat-card-content>
+    </mat-card>
+    }
+
+
+</section>

@@ -1,0 +1,9 @@
+mat-toolbar {
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .copyright {
+    display: flex;
+    align-items: center;
+  }
+}

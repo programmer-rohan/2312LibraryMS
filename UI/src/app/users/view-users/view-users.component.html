@@ -1,0 +1,8 @@
+<mat-card>
+    <mat-card-content>
+        <h1>All Users of Library</h1>
+    </mat-card-content>
+</mat-card>
+
+<page-table [columns]="columns" [dataSource]="users" (unblock)="unblockUser($event)">
+</page-table>

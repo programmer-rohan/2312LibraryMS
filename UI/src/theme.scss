@@ -1,0 +1,5 @@
+@use "@angular/material" as mat;
+
+$dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+
+$dark-accent-A200: mat.get-color-from-palette($dark-accent, A200);

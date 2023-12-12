@@ -1,0 +1,124 @@
+<div class="register-form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Create Account</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="100px" gutterSize="10px"
+                           [formGroup]="registerForm">
+                <mat-grid-tile>
+                    <mat-form-field color="accent">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName">
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field color="accent">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName">
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field color="accent">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field color="accent">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput formControlName="mobileNumber">
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field color="accent">
+                        <mat-label>Password</mat-label>
+                        <input [type]="hidePwdContent ? 'password' : 'text'"
+                               matInput formControlName="password">
+                        <button mat-icon-button matSuffix
+                                (click)="hidePwdContent = !hidePwdContent">
+                            <mat-icon>
+                                {{hidePwdContent ? "visibility_off" :
+                                "visibility_on"}}
+                            </mat-icon>
+                        </button>
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field color="accent">
+                        <mat-label>Repeat Password</mat-label>
+                        <input [type]="hidePwdContent ? 'password' : 'text'"
+                               matInput formControlName="rpassword">
+                        <button mat-icon-button matSuffix
+                                (click)="hidePwdContent = !hidePwdContent">
+                            <mat-icon>
+                                {{hidePwdContent ? "visibility_off" :
+                                "visibility_on"}}
+                            </mat-icon>
+                        </button>
+                        <mat-error>Field is required!</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="accent"
+                    (click)="register()">Register</button>
+        </mat-card-actions>
+
+        <mat-card-actions>
+            <h4>Already have an account?</h4>
+            <a mat-stroked-button color="accent" routerLink="/login">Login</a>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div class="library-info">
+    <h1>Information</h1>
+    <mat-list>
+        <mat-list-item>
+            <p>
+                Once you create account, approval request will be sent to admin.
+                If that is approved, your account will be created.
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <p>
+                You can have maximun 3 books ordered that have not been
+                returned.
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <p>
+                You can keep a book with you for maximun 10 days.
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <p>If book is not returned after 10 days, you will receive an email.
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <p>
+                After 10th day, a fine of 50Rs will be imposed everyday and on
+                every book that has
+                not been
+                returned.
+                This fine will be sent you in the email everyday.
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <p>
+                If your fine exceeds 500Rs or the book is damaged, Admin can
+                block your account.
+            </p>
+        </mat-list-item>
+    </mat-list>
+
+</div>

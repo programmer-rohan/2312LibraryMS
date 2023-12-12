@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+        <h1>Return a Book</h1>
+    </mat-card-header>
+
+    <mat-card-content [formGroup]="returnForm">
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>User ID</mat-label>
+            <input matInput formControlName="userId">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Book ID</mat-label>
+            <input matInput formControlName="bookId">
+        </mat-form-field>
+
+        <div class="fine">
+            <button mat-stroked-button color="accent" (click)="getFine()">
+                Get Fine
+            </button>
+            <span [ngStyle]="{'display': fineToPay === null ? 'none' : 'flex'}">
+                {{fineToPay}}Rs
+            </span>
+        </div>
+
+        <button mat-stroked-button color="accent" (click)="returnBook()">
+            Return Book
+        </button>
+
+    </mat-card-content>
+</mat-card>
